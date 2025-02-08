@@ -1,5 +1,10 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./style.css";
 
-createApp(App).mount('#app')
+// Register the PWA service worker
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({ immediate: true });
+
+createApp(App).mount("#app");
