@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite & Build Artifacts
+.vite/
+.cache/
+*.local
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Env files (API keys, secrets)
+.env*
+!.env.example
+
+# Netlify cache
+.netlify/
+
+# TypeScript build outputs
+*.tsbuildinfo
