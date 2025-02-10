@@ -1,10 +1,14 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import "./style.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import "leaflet/dist/leaflet.css";
 
-// Register the PWA service worker
-import { registerSW } from "virtual:pwa-register";
+// Fix Leaflet icon loading issue
+import L from 'leaflet';
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: '/node_modules/leaflet/dist/images/marker-icon-2x.png',
+  iconUrl: '/node_modules/leaflet/dist/images/marker-icon.png',
+  shadowUrl: '/node_modules/leaflet/dist/images/marker-shadow.png',
+});
 
-registerSW({ immediate: true });
-
-createApp(App).mount("#app");
+createApp(App).mount('#app')
